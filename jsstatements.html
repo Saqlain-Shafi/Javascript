@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statements</title>
+    <style>
+        h1{
+            text-align: center;
+            color:darkturquoise;
+        }
+        p{
+            font-family: cursive;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <h1>Example of JS statements</h1>
+    <p>In this example ,i'm solving a linear algebric expression.</p>
+    <p>Using statements to load the linear expression.</p>
+    <p></p>Click on the button to get result of expression.</p>
+    <p id="result"></p>
+    <button type="button" onclick="myfunction()">Click here</button>
+    <script>
+        let x,y,z;     //Declaring  variables.
+        x = 3 + 1999;  //assigining value to x.
+        y = 1909;      //assigining value to y.
+        z = x - y;     //assigining value to z.
+function myfunction(){
+    document.getElementById("result").innerHTML=
+    "The value of z is " + z + ".";
+}
+    </script>
+</body>
+</html>

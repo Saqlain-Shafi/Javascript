@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJECTS</title>
+    <style>
+        h1 {
+            text-align: center;
+            background-color: cyan;
+            font-family: cursive;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JS OBJECTS</h1>
+    <p> In This exercise i will learn about: </p>
+    <ul style="list-style-type: disc;">
+        <li>JS OBJECT</li>
+        <LI>JS PROPERTY</LI>
+        <LI>JS METHODS</LI>
+    </ul>
+    <h2>JS OBJECT</h2>
+    <p>JS objects are also like variables but they store named
+        valus while as variables store only values.</p>
+    <p>A JS object is defined as object name and then followed
+        by its property names and their values.</p>
+    <p>Example: fruit = {Name:"apple",Color:"red",variety:"Delicious";}</p>
+    <p>In the above example fruit is object name ,'name,color,etc'
+        are property names and 'apple,red,etc' are property
+        values.
+        The properties are separated by using a comma.</p>
+    <h2>JS PROPERTY</h2>
+    <p>The JS property is assessed by two methods:</p>
+    <ol>
+        <li>objectname.propertyname</li>
+        <li>objectname["propertyname"]</li>
+    </ol>
+    <h2>JS METHODS</h2>
+    <p>JS Methods are the actions performed on objects<br>
+        Methods are functions stored as a property.</p>
+    <p>Example: fruitname : function(){
+        "the name of this fruit is" + " " + fruit.Name;}
+    </p>
+    <p id="si"></p>
+
+    <script>
+        fruit = {
+            name: "apple",
+            color: "red",
+            variety: "delicious",
+            fruitnamecolor: function () {
+                return "The name of this fruit is " + " " + this.name +
+                    " and the color of this fruit is " + " " + this.color;
+            }
+        }
+        document.getElementById("si").innerHTML = fruit.fruitnamecolor();
+
+
+
+        let user = {};
+        user.Name = "Jhon";              //Practicing one line for each action.
+        user.Surname = "smith";
+        user.Name = "Pete";
+        delete user.Name;
+        alert(user.Surname);
+
+
+        let obj = {};                    //Function to check whether an object is empty or not
+        function isEmpty(obj) {
+            for (let prop in obj) {
+                return false;
+            }
+            return true;
+        }
+        alert(isEmpty(obj));
+
+
+        let salaries = {                        //summing the salaries placed in object.
+            John: 100,
+            Ann: 160,
+            Pete: 130
+        }
+        let sum = 0;
+        for (let prop in salaries) {
+            sum += salaries[prop];
+        }
+        alert(sum);
+
+
+        let calculator = {                       //Creating a calculator by object methods.                     
+            sum() {
+                return this.x + this.y;
+            },
+            mul() {
+                return this.x * this.y;
+            },
+            read() {
+                this.x = +prompt('x?');
+                this.y = +prompt('y?');
+            }
+        };
+        calculator.read();
+        alert(calculator.sum());
+        alert(calculator.mul());
+
+
+      function Accumulator(startingValue){
+        this.value = startingValue;
+        this.read = function(){
+            this.value += +prompt('a',0); 
+        };
+    }
+        let accumulator = new Accumulator(1);
+        accumulator.read();
+        alert(accumulator.value);
+      
+    </script>
+</body>
+
+</html>

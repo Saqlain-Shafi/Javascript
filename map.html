@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map and set</title>
+</head>
+
+<body>
+    <script>
+        let obj = { name: 'saqlain' };
+
+        let map = new Map();
+        map.set('a', 'string')
+            .set(1, 'number')                 //chaining of map as every map.set returns the map itself.
+            .set('true', 'boolean')
+            .set('saqlain', 1909);
+        alert(map.size);
+        alert(map.has(1));
+        alert(map.get('true'));
+        alert(map.get('saqlain'));
+        for (let key of map.keys()) {
+            alert(key);
+        }
+        for (let key of map.values()) {
+            alert(key);
+        }
+        map.forEach((value, key) => {
+            alert(`${key}: ${value}`);
+        });
+    </script>
+</body>
+
+</html>

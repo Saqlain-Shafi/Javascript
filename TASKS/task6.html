@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type conersion</title>
+</head>
+<body>
+    <script>
+     let age = "22";
+     alert(typeof age);            //Here the type is string because age is assigned as string value.
+     age = Number(age)             //Here the string is converted to number using Number(value).
+     alert(typeof age);            //After conversion we get type as number.
+
+     let x = 12345;
+     alert(typeof x);              //Here the type is number because age is assigned as number value. 
+     x = String(x);                //Here the number is converted to string using String(value).
+     alert(typeof x);              //After conversion we get type as string.
+
+     let name = "my name is jhon";
+     alert(typeof name);           //Here the type is string because age is assigned as string value. 
+     name = Boolean(name);         //Here the string is converted to boolean using Boolean(value).
+     alert(typeof name);           //After conversion we get type as boolean.
+    </script>
+</body>
+</html>

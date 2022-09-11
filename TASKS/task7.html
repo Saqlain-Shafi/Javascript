@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operators</title>
+</head>
+<body>
+    <script>
+        let a = 19;
+        let b = 19;
+
+        alert(++a);       //Here I incremented a but as a prefix so the value returned will be new one.
+        alert(b++);       //Here postfix is done so the value returned will be old one. 
+
+        alert(a);         //Both prefix and post fix are actuallly incrementing the parent variable.
+        alert(b);
+
+        c = 25 * (a += 1);
+        alert (c);
+
+        let d = prompt('First number?',1);
+        let e = prompt('Second number?',2);
+        alert(d + e);                         //Here the value is returned 12 because the prompt returns them as string.
+        alert(Number(d) + Number(e));         //Now i converted the strings to numbers so we will get result 3.
+    </script>
+</body>
+</html>

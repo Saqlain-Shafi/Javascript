@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS STRINGS</title>
+</head>
+<body>
+    <h1> JS STRINGS</h1>
+    <p id="si"></p>
+    <p id="is"></p>
+    <p id="ss"></p>
+    <p id="iss"></p>
+    <p id="isss"></p>
+    <p id="issss"></p>
+    <p id="isssss"></p>
+    <p id="issssss"></p>
+    <script>
+        let x = "My name is Jhon doe.";
+        let y = "He is called sometimes 'jhon'.";
+        let z = 'He is called sometimes \"Doe\".';   //using escape character.
+        document.getElementById("si").innerHTML =
+         x + "<br>" +  y + "<br>" + z;           //Breaking code lines at operater
+        document.getElementById("is").innerHTML = "The length of this\
+        string is " + y.length;     
+        //using length property.
+        //breaking code at any text using backslash.
+        let a = "Tabel";
+        let b = new String("tabel");
+        let c = "New";
+        document.getElementById("ss").innerHTML= typeof a + "<br>" + typeof b;
+        document.getElementById("iss").innerHTML= "Now we will see" +
+        " string extraction.";   //breaking code at any text by univerally accepted + operator.
+        document.getElementById("isss").innerHTML= z.substr(6,5);
+        document.getElementById("issss").innerHTML= z.slice(-10,-5);    //same for substring but negative value not accepted
+        document.getElementById("issss").innerHTML= x.replace("Jhon","Harry");
+        document.getElementById("isssss").innerHTML= c.concat(" ",a);
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAYS</title>
+
+</head>
+
+<body>
+    <script>
+        let arr = ["jazz", "blues"];
+        arr.push("rock-n-roll");
+        alert(arr);
+        arr[Math.floor(arr.length - 1) / 2] = "classics";
+        alert(arr);
+        alert(arr.shift(0));
+        alert(arr);
+        arr.unshift('rap', 'reggae');
+        alert(arr);
+
+        function mulInput() {
+            let num = [];
+
+            while (true) {
+                let data = prompt('Enter a number');
+
+                if (data === '' || data === null || !isFinite(data)) break;
+                num.push(+data);
+            }
+            let mul = 1;
+            for (let number of num) {
+                mul *= number;
+            }
+            return mul;
+        }
+        alert(mulInput());
+
+        function filterRange(arr, a, b) {
+            return arr.filter(item => item >= a && item <= b);
+        }
+        let arr = [12, 3, 4, 8, 9];
+        let f = filterRange(arr, 2, 8);
+        alert(f);
+
+        let arr = [5, 2, 1, -10, 8];
+        arr.sort((a, b) => b - a);
+        alert(arr);
+
+       //creating extendable calculator
+        function Calculator() {
+
+            this.methods = {
+                "-": (a, b) => a - b,
+                "+": (a, b) => a + b
+            };
+
+            this.calculate = function (str) {
+
+                let split = str.split(' '),
+                    a = +split[0],
+                    op = split[1],
+                    b = +split[2];
+
+                if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+                    return NaN;
+                }
+
+                return this.methods[op](a, b);
+            };
+
+            this.addMethod = function (name, func) {
+                this.methods[name] = func;
+            };
+        }
+        let calc = new Calculator;
+        alert(calc.calculate("9 + 19"));
+
+        let advCalc = new Calculator;
+        advCalc.addMethod('**', (a, b) => a ** b);
+        advCalc.addMethod('/', (a, b) => a / b);
+        advCalc.addMethod('%', (a, b) => a % b);
+
+        alert(advCalc.calculate("7 % 3"));
+
+    </script>
+</body>
+
+</html>

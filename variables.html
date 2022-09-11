@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>variables</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        h1{
+            background-color:gray;
+            color: white;
+            text-align: center;
+        }
+        #is{
+            font-size: large;
+            font-family: cursive;
+            text-align: center;
+        }
+        p{
+            font-size: large;
+            font-weight: bolder;
+        }
+        button{
+            margin:0 50%;
+            width:100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<h1>Trying out JS variables</h1>
+<p id="is">Practising the var,let and const of JS.</p>
+<p>In this example i will try some linear expressions.</p>
+<p>Just getting to know how to use JS variables , operators and most importantly practsing the syntax.</p>
+<p>I am trying to get the value of z by assigning value to x,y and z.</p>
+<p>Will use a button , to have calculator like feel.</p>
+<p id="si"></p>
+<button onclick="myfunction()" style="background-color:aqua;color:black;border: 2px solid black;">Calculate</button>
+<script>
+    function myfunction()
+    {
+        let x = 99;
+        x++;
+        var y = 88;
+        const z = (x*y) + (x-y) / 10;
+        document.getElementById("si").innerHTML="The value of z is " + z + ".";
+    }
+    
+</script>
+</body>
+</html>

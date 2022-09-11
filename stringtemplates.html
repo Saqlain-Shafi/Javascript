@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Templates</title>
+</head>
+<body>
+    <h1>STRING TEMPLATES</h1>
+    <p>Here i am learning how to create a html 
+        template with javascript string templates.</p>
+    <p id="si"></p>
+    <p id="sii"></p>
+    <p id="siii"></p>
+    <script>
+        let fname = "saqlain";
+let lname = "shafi";                              //Variable substitution
+let fullname = `My name is ${fname},${lname}.`;
+document.getElementById("si").innerHTML= fullname;
+
+let x = 1900;                                     //Expression substitution
+let y = 09;
+let z = `CRUZZCATTO: ${(x + y).toFixed(2)}`;
+document.getElementById("sii").innerHTML= z;
+
+let header = "Biography";                         //Creating html template
+let tags = ["Birth", "Education", "Profession", "Marriage"];
+let webpage = `<h2>${header}</h2><ul>`;
+
+for (const x of tags) {
+  webpage += `<li>${x}</li>`;
+}
+
+webpage += `</ul>`;
+document.getElementById("siii").innerHTML = webpage;
+    </script>
+</body>
+</html>

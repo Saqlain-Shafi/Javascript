@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITERABLE</title>
+</head>
+
+<body>
+    <script>
+        let age = {
+            a: 18,
+            b: 30
+        };
+        age[Symbol.iterator] = function () {
+            return {
+                current: this.a,
+                last: this.b,
+                next() {
+                    if (this.current <= this.last) {
+                        return { done: false, value: this.current++ };
+                    }
+                    else {
+                        return { done: true };
+                    }
+                }
+            };
+        };
+
+        for (let value of age) {
+            alert(value);
+        }
+
+
+        /*we can make the object itself iterator i:e it can contain the next() method by itself and it will make code more simpler*/
+
+        let age = {
+            a: 18,
+            b: 30,
+            [Symbol.iterator]() {
+                this.current = this.a;
+                return this;
+            },
+            next() {
+                if (this.current <= this.b) {
+                    return { done: false, value: this.current++ };
+                }
+                else {
+                    return {
+                        done: true
+                    };
+                }
+
+            }
+        };
+        for (let value of age) {
+            alert(value);
+        }
+
+        //creating a real array from iterable or array like object.
+        let arrayLike = {
+            0: "Hello",
+            1: "World",
+            length: 2
+        };
+
+        let arr = Array.from(arrayLike);
+        alert(arr.shift());
+    </script>
+</body>
+
+</html>

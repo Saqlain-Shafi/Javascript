@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRINGS</title>
+</head>
+
+<body>
+    <script>
+
+        let str = "Interface";
+        alert(str[2].toUpperCase());                        //changing of case at a particular char.
+
+        let name = 'Saqlain';
+        let fname = 'Saqlain';
+        alert('q'.codePointAt(0));                          //Accessing the code of a char.
+        alert(String.fromCodePoint(113));                    //Accessing the char. from code.
+        alert(name.localeCompare(fname));                   //comparing two string.
+
+        function checkSpam(str) {
+            let subStr = str.toLowerCase();
+            return subStr.includes('fruit') || subStr.includes('APPLE');
+        }
+        alert(checkSpam('Hey do you know what is a FRUIT?'));
+        alert(checkSpam('I know what a fruit is.'));
+        alert(checkSpam('AppLe is also a fruit.'));
+        alert(checkSpam('I dun know what are you talking about.'));
+
+        function truncate(str, maxlength) {
+            return (str.length > maxlength) ?
+                str.slice(0, maxlength - 1) + '…' : str;
+        }
+        alert(truncate('Hello my name is saqlain', 15));
+        function extractCurrencyValue(str) {
+
+            return +str.slice(1);
+        }
+        alert(extractCurrencyValue('$120'));
+    </script>
+</body>
+
+</html>

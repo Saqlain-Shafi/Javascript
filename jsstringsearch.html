@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String search</title>
+</head>
+<body>
+    <h1>JS STRING SEARCH</h1>
+<p>In this page we will learn about various js string search methods</p>
+<p id="si"></p>
+<p id="sii"></p>
+<p id="siii"></p>
+<p id="siiii"></p>
+<p id="siiiii"></p>
+<p id="siiiiii"></p>
+<p id="siiiiiii"></p>
+<p id="siiiiiiii"></p>
+<script>
+    let x = "My name is saqlain but i love to here from that person my name as SAQI";
+    document.getElementById("si").innerHTML = x.indexOf("i",9);
+    document.getElementById("sii").innerHTML = x.lastIndexOf("name");
+    document.getElementById("siii").innerHTML = x.search("i");
+    document.getElementById("siiii").innerHTML = x.match(/sa/gi,);
+    document.getElementById("siiiii").innerHTML = x.includes("is",9);
+    document.getElementById("siiiiii").innerHTML = x.startsWith("is",8);
+    document.getElementById("siiiiiii").innerHTML = x.endsWith("name",7);
+    
+</script>
+</body>
+</html>

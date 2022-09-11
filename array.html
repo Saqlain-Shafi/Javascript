@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+
+<body>
+    <h1>JS ARRAY</h1>
+    <p id="demo"></p>
+    <button onclick="myFunc()">CLICK HERE</button>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <h2>List of names using forEach() to call every array element:</h2>
+    <p id="demo4"></p>
+
+    <p id="demo5"></p>
+    <script>
+        const names = ["saqlain", "shahid", "zahid", "zuhan", "zehran", "ishfaq"];
+        names[1] = "junaid";
+        names.push("aadil");
+        document.getElementById("demo").innerHTML = names;
+        document.getElementById("demo1").innerHTML = names[2];
+        document.getElementById("demo2").innerHTML = names.length;
+
+
+        //looping of array using for loop
+        let nlen = names.length;
+        si = "<h2>List of names,using for loop:</h2><ul>";
+        for (i = 0; i < nlen; i++) {
+            si += "<li>" + names[i] + "</li>";
+        }
+        si += "</ul>";
+        document.getElementById("demo3").innerHTML = si;
+
+        //looping an array using function
+        let iss = "<ul>";
+        names.forEach(myFunction);
+        iss += "</ul>";
+        document.getElementById("demo4").innerHTML = iss;
+
+        function myFunction(value) {
+            iss += "<li>" + value + "</li>";
+        }
+        function myFunc() {
+            names.push("sharik");
+            document.getElementById("demo").innerHTML = names;
+        }
+        document.getElementById("demo5").innerHTML = names;
+
+
+    </script>
+</body>
+
+</html>
