@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+
+<body>
+    <script>
+        //For Arrays.
+        let array = ['juawiarh', 'bilal', '30'];
+        let [Name, Fathersname, age] = array;
+        alert(age);
+
+        //OR
+
+        let [name, Age, standard] = ['ishfaq', '30', 'second'];
+        alert(standard);
+
+        //swapping values
+        [name, Age, standard] = [Age, standard, name];
+        alert(Age);
+
+        //For objects.
+        let obj = {
+            company: 'bsnl',
+            service: 'broadband',
+            since: 1990
+        }
+        let { company: c, service: s, since: sin, profit: p = '500cr' } = obj;
+        alert(sin);
+        alert(p);
+        //use in functions
+        function destructure({ company: c = "hello", service: s = "hi", since: sin = "ola" }) {
+            alert(`${c} ${s} ${sin}`);
+        }
+        destructure(obj);
+
+    </script>
+</body>
+
+</html>
