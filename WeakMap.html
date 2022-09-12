@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeakMap</title>
+</head>
+
+<body>
+    <script>
+        //Example of WeakMap
+        let stud = { name: 'jhon' };
+        let visitCount = new Map();
+        visitCount.set(stud, 1);
+        function countUser(user) {
+            let count = visitCount.get(user) || 0;
+            visitCount.set(user, count + 1);
+        }
+        stud = null;
+        countUser(stud);
+        alert(visitCount.get(stud));
+
+        //Example of WeakSet
+        let person1 = { name: 'jhon' };
+        let person2 = { name: 'ishfaq' };
+        let person3 = { name: 'sharik' };
+        let person4 = { name: 'aadil' };
+        let person5 = { name: 'shakir' };
+
+        let visitedPerson = new WeakSet();
+        visitedPerson.add(person1);
+        visitedPerson.add(person5);
+        visitedPerson.add(person3);
+        visitedPerson.add(person4);
+
+        alert(visitedPerson.has(person3));
+        alert(visitedPerson.has(person2));
+        person3 = null;                           //clearing person3 clears it from WeakSet also.
+        alert(visitedPerson.has(person3));
+    </script>
+</body>
+
+</html>
