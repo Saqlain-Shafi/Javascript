@@ -25,6 +25,22 @@
         for (let keys in obj1) {
             alert(keys);
         }
+
+        let prices = {
+            banana: 1,
+            orange: 2,
+            meat: 4,
+        };
+        let array1 = Object.entries(prices);
+        let doublePrices = array1.map(entry => [entry[0], entry[1] * 2]);
+        let newPrices = Object.fromEntries(doublePrices);
+        alert(Object.entries(newPrices));
+
+        //shorter version of above example
+        
+        let doublePrices1 = Object.fromEntries(Object.entries(prices).map(entry => [entry[0], entry[1] * 2]));
+        alert(doublePrices1.orange);
+
     </script>
 </body>
 
