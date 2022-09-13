@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and time</title>
+</head>
+
+<body>
+    <script>
+        // Different ways of creating  date
+        let rightNow = new Date();                 //creates date of current day.
+        alert(rightNow);
+
+        let date = new Date(48 * 3600 * 1000);          //argument is in  miliseconds ,creates date passed to 01 jan,1970.
+        alert(date);
+
+        let dateTime = new Date(1998, 9, 1, 9, 09, 09, 999);  //new Date(year, month, date, hours, minutes, seconds, ms)
+        alert(dateTime);                                       //Months start from 0 i:e 0 is jan and 11 is dec.
+
+        let timeDate = new Date('1997-04-03');                 //new Date(datestring)
+        alert(timeDate);
+
+
+        //Methods to access date object components.
+        alert(dateTime.getFullYear());
+        alert(dateTime.getMonth());
+        alert(dateTime.getDate());
+        alert(dateTime.getDay());
+        alert(dateTime.getHours());
+        alert(dateTime.getMinutes());
+        alert(dateTime.getSeconds());
+        alert(dateTime.getMilliseconds());
+        alert(dateTime.getUTCFullYear());           //If we want in univertsal time constant then insert UTC after get.
+        alert(dateTime.getUTCMonth());
+        alert(dateTime.getTime());                       //only this is not having UTC time variant.
+        alert(dateTime.getTimezoneOffset());           //it gives offset in minutes bw UTC & local zone.
+
+
+        //Methods to set components.
+        let newDate = new Date();
+        newDate.setFullYear(1997, 03, 03);
+        newDate.setHours(09, 09, 09, 99);
+        newDate.setTime(958641273654);            //Now date and time will be according to miliseconds passed from 01 jan 1970.
+        alert(newDate);
+
+
+    </script>
+
+</body>
+
+</html>
