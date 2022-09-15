@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            name: 'tajmeel',
+            age: 12,
+            class: 'fifth',
+            rollNo: 03,
+            brother: {
+                name: 'taheem',
+                age: 11,
+                class: 'third',
+                rollNo: 13
+            }
+        };
+        let str = JSON.stringify(obj, null, 2);
+
+        alert(str);
+        alert(JSON.stringify(obj, ['brother'], 4));
+
+        let stri = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}';
+
+        let meetup = JSON.parse(stri, function (key, value) {
+            if (key == 'date') return new Date(value);
+            return value;
+        });
+
+        alert(meetup.date.getDate());
+
+    </script>
+</body>
+
+</html>
