@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REST PARAMETERS</title>
+</head>
+
+<body>
+    <script>
+        //Getting a an array from the list of parameters.(rest parameters)
+        function mulAll(...args) {
+            let mul = 1;
+            for (let arg of args)
+                mul *= arg;
+            return mul;
+        }
+        alert(mulAll(2, 4, 3));
+        alert(mulAll(42, 8, 5, 6));
+
+        //Assiging some variables and rest in some array title.
+        function rest(lastName, firstName, ...family) {
+            alert(firstName + ' ' + lastName);
+            alert(family[0]);
+            alert(family[1]);
+            alert(family.length);
+        }
+        rest("reyaz", "taheem", "tajmeel", "reyaz");
+
+
+        //using argument variables in function
+        function name() {
+            alert(arguments[0]);
+            alert(arguments[1]);
+            alert(arguments[2]);
+            alert(`${arguments[0]} ${arguments[1]} ${arguments[2]}`)
+            alert(arguments.length);
+        }
+        name("saqlain", "shafi", "para");
+
+        //Now getting list of parameters from an array(spread syntax)
+
+        let arr = [2, 4, 8, 9]
+        let arr1 = [1, 3, 7, 10]
+        alert(Math.max(49, ...arr, 0, ...arr1, 22, 01));    //can't use math.max directly on array otherwise.
+        alert(Math.max(0, ...arr, 0, ...arr1, 6, 1.5));
+        let mergedArray = [arr, arr1];
+        alert(mergedArray);
+
+        let str = "saqlain";
+        alert([...str]);            //converts an iterable into the chars of an array
+        alert(Array.from(str));     //used for both array like as well as iterables
+    </script>
+
+</body>
+
+</html>
