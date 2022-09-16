@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursion</title>
+</head>
+
+<body>
+    <script>
+        //using for loop to sum n natural numbers.
+        function sumTo(n) {
+            let sum = 0;
+            for (let i = 1; i <= n; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+        alert(sumTo(4));
+        alert(sumTo(10000000));
+
+        //using recursive function to do the same.
+        function sumTo(n) {
+            if (n == 1) {
+                return n;
+            }
+            else {
+                return n + sumTo(n - 1);
+            }
+        }
+        alert(sumTo(4));
+        alert(sumTo(10000000));
+
+        //using arithemtic formula
+        function sumTo(n) {
+            let sum = (n * (n + 1)) / 2;
+            {
+                return sum;
+
+            }
+        }
+        alert(sumTo(4));
+        alert(sumTo(100000));
+
+
+
+
+    </script>
+</body>
+
+</html>
