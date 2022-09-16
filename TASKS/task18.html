@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonachi series</title>
+</head>
+
+<body>
+    <script>
+        function fibo(n) {
+            return n <= 1 ? n : fibo(n - 1) + fibo(n - 2);   //slow for higher values of n as so many recursive calls.
+        }
+        alert(fibo(5));
+
+        //method for calculting fpr hogher values of n.
+        function fibo(n) {
+            let a = 1;
+            let b = 1;
+            for (let i = 3; i <= n; i++) {
+                let c = a + b;
+                a = b;
+                b = c;
+            }
+            return b;
+        }
+        alert(fibo(5));
+    </script>
+</body>
+
+</html>
