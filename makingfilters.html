@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAKING FILTERS</title>
+</head>
+
+<body>
+    <script>
+        //example 01.
+        function range(a, b) {                 //creation of filter,which filters given range from the array.
+            return function (c) {
+                return c > a && c < b;
+            };
+        }
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+        alert(arr.filter(range(3, 10)));
+
+        //example 02.
+        function multiplier(d) {                //creating filter which filters no.'s having squares present in the array.
+            return function (x) {
+                return x == d * d;
+            };
+        }
+        let arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+        alert(arr1.filter(multiplier(2)));
+        alert(arr1.filter(multiplier(3)));
+
+        // example of making sorting function.
+        function byField(fieldName) {
+            return (a, b) => a[fieldName] > b[fieldName] ? 1 : -1;
+        }
+        let users = [
+            { name: "John", age: 20, surname: "Johnson" },
+            { name: "Pete", age: 18, surname: "Peterson" },
+            { name: "Ann", age: 19, surname: "Hathaway" }
+        ];
+        alert(users.sort(byField('name')));
+        // alert(users.sort((a, b) => a.name > b.name ? 1 : -1));      //directly this way.
+    </script>
+
+</body>
+
+</html>
