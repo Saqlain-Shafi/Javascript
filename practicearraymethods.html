@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array methods</title>
+</head>
+
+<body>
+    <script>
+        // let arr1 = ['saq', 'lai', 'n'];
+        // let arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // let arr3 = arr1.concat(arr2);         //merging method
+        // alert(arr3);
+        // let arr4 = arr1.join('_');            //joining array elements.
+        // alert(arr4);
+        // alert(arr2);
+        // let arr5 = arr2.slice(2, 9);           //getting part of an array as new array.
+        // alert(arr5);
+        // let arr6 = arr1.sort();               //sorts in alphabetical order also modifies original array.
+        // alert(arr6);
+        // alert(arr1);
+        // alert(arr2);
+        // let arr7 = arr2.splice(1, 6, 99, 99, 999, 999, 9999, 999999, 99999, 999999);
+        // alert(arr7);                              //returns removed elements.
+        // alert(arr2);                              //modifies original array.
+        // let arr8 = arr1.reverse();                //reverses the elements of array and also modifies the original array.
+        // alert(arr8);
+        // alert(arr1);
+
+        // let compare = (a, b) => { return b - a };
+        // let arr9 = arr2.sort(compare);            //sorting array based on a comparing function.(scending order)
+        // alert(arr9);
+        // alert(arr2.length)
+        // delete arr2[2];                            //deletes an element, modifies the original array but does not change the length of array.
+        // alert(arr2);
+        // alert(arr2.length);
+
+        let newArr = [3, 2, 1, 6, 5, 4];
+        let a = newArr.pop();                            //removes an element at the end of array
+        let b = newArr.push(99);                         //adds an element at the end of array       
+        let c = newArr.shift();                          //removes an element at the begining of array
+        let d = newArr.unshift(88);                      //adds an element at the begining of array
+
+        alert(newArr);                            //These all methods modify original array.
+        alert(a);                                 //returns removed element.
+        alert(b);                                 //returns the length of array.
+        alert(d);                                 //returns the length of array.
+        alert(c);                                 //returns removed element.
+    </script>
+</body>
+
+</html>
