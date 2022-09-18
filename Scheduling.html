@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout/setInterval</title>
+
+</head>
+
+<body>
+    <script>
+        function sum(a, b) {
+            alert(a + b);
+        }
+        let task = setTimeout(sum, 2000, 10, 6);                         //delays the execution of fxn 'sum' by 2 seconds.
+        setTimeout(() => alert('Hi there'), 1000);                       //using string is not recommended.
+        clearTimeout(task);                                              //cancels the execution of task , similarly we can stop other too.
+
+        let task1 = setInterval(sum, 2000, 4, 4);                         //also delays the execution but after the timeinterval, runs the fxn repeatedly.
+        // clearInterval(task1);                                          //stops the execution.
+        setTimeout(() => { clearInterval(task1); alert('stop') }, 5000);  //Also stops the execution after given time interval.
+
+    </script>
+</body>
+
+</html>
