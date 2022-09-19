@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIXING THIS PROBLEM</title>
+
+</head>
+
+<body>
+    <script>
+        // let company = {
+        //     name: 'Nokia',
+        //     cell() {
+        //         alert(`We are, ${this.name}`);
+        //     }
+        // };
+        // setTimeout(company.cell,1000);     //here we lose this.
+        // setTimeout(function () {            //with the help of wrapper 'this problem is solved'
+        //     company.cell();
+        // }, 1000);
+
+        // company = {                            //if the value of object is changed ,due to the delay of 1 second the setTimeout calls wrong object method then
+        //     name: 'samsung',
+        //     cell() {
+        //         alert(`We are the giant, ${this.name}`);
+        //     }
+        // };
+
+
+        //To fix this problem another built in method called 'bind'is used.
+
+        let company = {
+            name: 'Nokia',
+            cell() {
+                alert(`We are, ${this.name}`);
+            }
+        };
+        let cell = company.cell.bind(company);
+        cell();
+        setTimeout(cell, 1000);                      //here even when value of object is changed ,the bind func still gives correct result.
+        company = {
+            name: 'samsung',
+            cell() {
+                alert(`We are the giant, ${this.name}`);
+            }
+        };
+
+    </script>
+</body>
+
+</html>
