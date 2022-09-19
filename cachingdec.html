@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Caching Decorater</title>
+</head>
+
+<body>
+    <script>
+        //Taking single value in caching decorator.
+        function show(x) {
+            alert(`The vale is ${x}`);
+            return x;
+        }
+        function cachingDecorator(func) {
+            let cache = new Map();
+            return function (x) {
+                if (cache.has(x)) {
+                    return cache.set(x);
+                }
+                let result = func(x);             //this can't be used for multiple args as 'this will be undefined then'.
+                cache.set(x, result);
+                return result;
+            };
+        }
+        show = cachingDecorator(show);
+        alert(show(9));                       //here show(1) is cached.
+        alert('Again' + show(1));            //here the result is returned from cache.
+    </script>
+</body>
+
+</html>
