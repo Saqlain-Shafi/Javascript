@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>partial fxn</title>
+</head>
+
+<body>
+    <script>
+        //here we can bind arguments too along with this,called(partial fxns).
+        let user = {
+            name: 'calculator',
+            calc(a, b) {
+                return a - b;
+            }
+        };
+        let subtract = user.calc.bind(null, 9);
+        alert(subtract(3));                   //it is calc(9,6) actually.
+        alert(subtract(9));
+    </script>
+</body>
+
+</html>
