@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CACHING DECORATOR</title>
+</head>
+
+<body>
+    <script>
+         //Taking multiarguments.
+        //here i'm using built-in func.apply to set this,otherwise the result calls original function and this becomes undefined.
+        let mul = {
+            nums(a, b) {
+                alert(`Called with ${a},${b}`);
+                return a * b;
+            }
+        };
+
+        function cachingDecorator(func, hash) {
+            let cache = new Map();
+            return function () {
+                let key = hash(arguments);
+                if (cache.has(key)) {
+                    return cache.get(key);
+                }
+                let result = func.apply(this, arguments);
+                cache.set(key, result);
+                return result;
+            };
+        }
+        function hash(args) {
+            return args[0] + ',' + args[1];
+        }
+        mul.nums = cachingDecorator(mul.nums, hash);
+        alert(mul.nums(9, 9));
+    </script>
+</body>
+
+</html>
