@@ -17,15 +17,18 @@
         while (a != num) {
             a = +prompt("enter a number");
             chances++;
-            if (a > num) {
-                alert('your number is grater than random number');
+            if (a > num && a<100) {
+                alert('your number is greater than random number');
             }
             else if (a == num) {
                 alert('Congratulations, you are correct');
                 alert(`your score is : ${100 - chances}`);
             }
-            else {
+            else if(a<num && a>0) {
                 alert('your number is less than random number');
+            }
+            else{
+                alert('Enter any number between 0 to 100');
             }
         }
 
