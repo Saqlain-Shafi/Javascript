@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise1</title>
+</head>
+
+<body>
+    <script>
+        let num = Math.random() * 100;
+        num = Number.parseInt(num);
+        let a;
+        let chances = 0;
+        while (a != num) {
+            a = +prompt("enter a number");
+            chances++;
+            if (a > num) {
+                alert('your number is grater than random number');
+            }
+            else if (a == num) {
+                alert('Congratulations, you are correct');
+                alert(`your score is : ${100 - chances}`);
+            }
+            else {
+                alert('your number is less than random number');
+            }
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
