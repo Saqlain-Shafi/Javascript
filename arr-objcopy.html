@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>copying obj/arr</title>
 </head>
-
 <body>
     <script>
         //copying an object.
@@ -15,7 +14,7 @@
         let newObj = { ...obj };                       //copies an object into new obj.
         alert(JSON.stringify(newObj));
         obj.height = 6; 
-        alert(JSON.stringify(newObj));                 //does not modify copied obj.
+        alert(JSON.stringify(newObj));                 //Does not modify copied obj.
         alert(JSON.stringify(obj));
 
         //copying an array.
@@ -24,7 +23,7 @@
         alert(newArr);
         newArr.push(9);
         alert(newArr);
-        alert(arr);                                    //does not modify the original array.
+        alert(arr);                                    //Does not modify the original array.
     </script>
 </body>
 

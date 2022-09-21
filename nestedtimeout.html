@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NESTEDTIMEOUT</title>
+</head>
+
+<body>
+    <script>
+        // function greetings(){
+        //     alert('HELLO EVERYONE');
+        // }
+        // setInterval(greetings,1000);          //repeating the function after 1 second.
+
+        //The nested setTimeout is a more flexible method than setInterval as we set precisely the interval bw two executions.
+        setTimeout(function greetings() {
+            alert('HELLO EVERYONE');
+            setTimeout(greetings, 1000);
+        }, 1000)
+    </script>
+
+</body>
+
+</html>

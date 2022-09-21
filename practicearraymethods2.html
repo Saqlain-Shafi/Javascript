@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher array methods</title>
+</head>
+
+<body>
+    <script>
+        //These all methods return a new array but don't modify the original one.
+        let arr = [2, 4, 6, 8, 10];
+        let arr1 = arr.map((a) => {
+            return a * 2;
+        })
+        alert(arr1);
+        let arr2 = arr.filter((c) => {
+            return c > 3;
+        })
+        alert(arr2);
+        let arr3 = arr.reduce((d, e) => {
+            return d * e;
+        })
+        alert(arr3);
+
+        arr.forEach((item) => {
+            alert(item * 2)
+        });
+
+
+    </script>
+</body>
+
+</html>

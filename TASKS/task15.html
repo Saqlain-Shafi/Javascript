@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and time</title>
+</head>
+
+<body>
+    <script>
+
+        //01. creating date.
+        let date = new Date(2012, 1, 20, 3, 12, 0, 0);
+        alert(date);
+
+        //02.creating a function to show weekday.
+        let date1 = new Date(2012, 0, 3);
+        function getWeekDay(date1) {
+            let days = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
+            return weekDay = days[date1.getDay()];
+        }
+        getWeekDay(date1);
+        alert(weekDay);
+
+        //03.creating a fxn to show a European day,where sunday = 7.
+        let date2 = new Date(2012, 0, 3);
+        function getLocalDay(date2) {
+            let day = date2.getDay();
+            if (day == 0) {
+                day = 7;
+            }
+            return day;
+        }
+        alert(getLocalDay(date2));
+
+        //04.Finding date ago some given date.
+        let date3 = new Date(2019, 0, 2);
+        function getDateAgo(date2, days1) {
+            let newDate = new Date(date3);
+            newDate.setDate(date3.getDate() - days1);
+            return newDate;
+        }
+        alert(getDateAgo(date2, 45));
+    </script>
+</body>
+
+</html>

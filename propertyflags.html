@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>property flags</title>
+
+</head>
+
+<body>
+    <script>
+        //getting all flag properties.
+        let user = {
+            name: 'juwairah',
+            age: 6
+        }
+        let descriptor = Object.getOwnPropertyDescriptor(user, 'age');
+        alert(JSON.stringify(descriptor, null, 2));
+
+        //changing the flags.
+        let user1 = {
+            name: 'juwairah'
+        };
+        Object.defineProperty(user1, 'age', {
+            value: 'six years',
+            writable: false,
+            enumerable: true
+        }                                                   //changed the writable flag to false.
+        );
+        let descriptor1 = Object.getOwnPropertyDescriptor(user1, 'age');
+        alert(JSON.stringify(descriptor1, null, 2));
+        user1.age = "three years";
+        alert(user1.age);                                //so value is not changed as writable is set to false.
+
+        Object.defineProperty(user1, 'class', {
+            value: 6,
+
+            configurable: false
+        });
+        delete user1.class;
+        alert(user1.class);                        //still present there, as configurable is set to false.
+        for (let key in user1) {                   //only the last property will not get iterated as for that enumerable is false.
+            alert(key);
+        }
+
+        //we can also do cloning with these methods.
+        let user2 = {
+            name: 'saqlain',
+            age: 24,
+            class: 12,
+            town: 'pul'
+        }
+        let clone = Object.defineProperties({}, Object.getOwnPropertyDescriptors(user2));
+        alert(JSON.stringify(clone));
+    </script>
+</body>
+
+</html>
