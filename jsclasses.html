@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS CLASSES</title>
+</head>
+
+<body>
+    <script>
+        class university {
+            constructor(name, type, location, state) {
+                this.name = name;
+                this.type = type;
+                this.location = location;
+                this.state = state;
+            }
+            famousBranch() {
+                return alert("ELECTRICAL ENGINEERING");
+            }
+            slogan() {
+                return "Oh Lord! Advance Me In Knowledge"
+            }
+        }
+
+        let iust = new university('Islamic University of Science & Technology', 'Technical', 'Awantipora pulwama', 'j&k');                      //Created new object having all methods pesent in class.
+        alert(iust.type);
+        iust.famousBranch();
+        alert(iust.slogan());
+
+        //Now we will inherit a student from university.
+        class student extends university {
+            constructor(name, type, location, state, studentName, branch, admissionYear, passingYear) {
+                super(name, type, location, state);
+                this.branch = branch;
+                this.studentName = studentName;
+                this.passingYear = passingYear;
+                this.admissionYear = admissionYear;
+            }
+            favouriteSubject() {
+                return 'Control system';
+            }
+
+            finalMarks() {
+                return 'Final pointer: 8.41'
+            }
+            stop() {
+                super.famousBranch();            //this calls the parent in process.
+                this.finalMarks();
+            }
+        }
+        let person = new student('Islamic University of Science & Technology', 'Technical', 'Awantipora pulwama', 'j&k', 'saqlain', 'Electrical', 2016, 2020);
+        alert(person.studentName);
+        alert(person.favouriteSubject());
+        alert(person.slogan());
+        alert(person.stop());
+        for (let key of Object.entries(person)) {
+            alert(key);
+        }
+
+    </script>
+</body>
+
+</html>
