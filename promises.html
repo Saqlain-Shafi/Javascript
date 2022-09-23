@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promises</title>
+</head>
+
+<body>
+    <script>
+        let a = +prompt('enter a number');
+        let b = +prompt('enter a number');
+        let promise = new Promise(function (resolve, reject) {
+            c = a / b;
+            setTimeout(() => resolve(`${c}`), 2000);
+        });
+        promise.finally(() => alert('operation done, the value is ready'));   //this says operation has ended and you can have result now.
+        promise.then(
+            result => alert(result),           //only this will show here.
+            error => alert(error));
+        let promise1 = new Promise(function (resolve, reject) {
+            d = a * b;
+            setTimeout(() => reject(new Error('whoops')), 3000);
+        });
+        promise1.then(
+            result => alert(result),
+            error => alert(error));                  // this will show here.
+
+            //if we are interested in fulfilled promises only then we can use promise.then(alert), only.
+            //if we are interested in rejected promises only then we can use promise.catch(alert), only.
+    </script>
+</body>
+
+</html>
