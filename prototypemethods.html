@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding methods to protypes</title>
+</head>
+
+<body>
+    <script>
+        //Adding method to  native prototype.
+        Function.prototype.repeat = function (ms) {
+            setInterval(this, ms);
+        }
+        function f() {
+            alert('hi saqlain');
+        }
+        f.repeat(2000);
+
+        //Adding the decorating "repeat()" to functions
+        Function.prototype.repeat = function (ms) {
+            let f = this;
+            return function (...args) {
+                setInterval(() => f.apply(this, args), ms);
+            };
+        }
+
+        function f(a, b) {
+            alert(a * b);
+        }
+        f.repeat(2000)(4, 8);
+
+        //Modern prototype methods.
+        let saqlain = {
+            brother: true,
+            adult: true,
+            height: 7
+        };
+        let saqii = {
+            brother: true
+        };
+        let ishfaq = Object.create(saqlain);             //Sets saqlain prototype of ishfaq
+        alert(ishfaq.brother);
+        alert(Object.getPrototypeOf(ishfaq) === saqlain);    //gets the prototype.
+        Object.setPrototypeOf(ishfaq, saqii);                 //changes the prototype
+        alert(Object.getPrototypeOf(ishfaq) === saqlain);    //false asproptotype has been changes.
+        alert(Object.getPrototypeOf(ishfaq) === saqii);
+
+        //Object . create is also used for cloning.
+        let clone = Object.create(Object.getPrototypeOf(saqlain), Object.getOwnPropertyDescriptors(saqlain));
+        for (let key of Object.entries(clone)) {
+            alert(key);
+        }
+
+    </script>
+</body>
+
+</html>
