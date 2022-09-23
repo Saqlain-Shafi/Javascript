@@ -31,11 +31,15 @@
             returnItem(itemName) {
                 delete this.soldItems[itemName];
             }
+            static sale() {                                //this method is not for a paticular object , it is as whole for class.
+                alert('sale sale sale');
+            }
         }
 
         let fruits = new shop(['apple', 'banana', 'mango', 'pear']);
         fruits.getItems();
         fruits.buyItem('apple', 'saqlain');
+        shop.sale();
 
     </script>
 </body>
