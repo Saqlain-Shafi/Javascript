@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asyn/await</title>
+</head>
+
+<body>
+    <script>
+        function loadJson(url) {
+            return fetch(url)
+                .then(response => {
+                    if (response.status == 200) {
+                        return response.json();
+                    } else {
+                        throw new Error(response.status);
+                    }
+                });
+        }
+
+        loadJson('https://fkd.com')
+            .catch(alert); // Error: 404
+
+
+        //rewriting it using async/await.
+        async function loadJson(url) {
+            let response = await fetch(url);
+            if (response.status == 200) {
+                let Json = await response.json();
+                return Json;
+            }
+            throw new Error(response.status);
+        }
+        loadJson('https://fkd.com')
+            .catch(alert); // Error: 404
+    </script>
+</body>
+
+</html>
